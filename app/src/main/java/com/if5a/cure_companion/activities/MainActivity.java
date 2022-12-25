@@ -1,8 +1,10 @@
-package com.if5a.cure_companion;
+package com.if5a.cure_companion.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.if5a.cure_companion.R;
 
 public class MainActivity extends AppCompatActivity {
 
