@@ -57,7 +57,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:text="Belum punya Akun silakan klik disini untuk Register?"/>
+            android:text="Belum punya Akun? silakan klik disini untuk Register"/>
     </LinearLayout>
 
     <ProgressBar
@@ -65,7 +65,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/ll_loginpasien"
-        android:layout_centerHorizontal="true"/>
+        android:layout_centerHorizontal="true"
+        android:visibility="gone"
+        />
 
 
 </RelativeLayout>

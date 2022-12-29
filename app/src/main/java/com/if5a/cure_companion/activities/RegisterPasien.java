@@ -12,8 +12,8 @@ import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.if5a.cure_companion.R;
-import com.if5a.cure_companion.models.ValueNoDataPasien;
-import com.if5a.cure_companion.services.APIServicePasien;
+import com.if5a.cure_companion.models.ValueNoData;
+import com.if5a.cure_companion.services.APIService;
 import com.if5a.cure_companion.utilitis.UtilityPasien;
 
 import retrofit2.Call;
@@ -21,6 +21,7 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class RegisterPasien extends AppCompatActivity {
+    private final static String BASE_KEY = "rekom";
 
     private EditText etUsername, etEmail, etPhoneNumber, etPassword;
     private Button btnRegister, btnLogin;
@@ -62,7 +63,7 @@ public class RegisterPasien extends AppCompatActivity {
                     bolehRegister = false;
                     etPhoneNumber.setError( "Phone Number tidak boleh kosong!" );
                 }
-                if(TextUtils.isEmpty( password )){
+                if(TextUtils.isEmpty(password)){
                     bolehRegister = false;
                     etPassword.setError( "Password tidak boleh kosong!" );
                 }
@@ -89,11 +90,11 @@ public class RegisterPasien extends AppCompatActivity {
 
     private void register(String username, String email, String phonenumber, String password) {
         progressBar.setVisibility(View.VISIBLE);
-        APIServicePasien api = UtilityPasien.getmRetrofit().create( APIServicePasien.class);
-        Call<ValueNoDataPasien> call = api.register("rekom", username,email,phonenumber,password);
-        call.enqueue( new Callback<ValueNoDataPasien>() {
+        APIService api = UtilityPasien.getmRetrofit().create( APIService.class);
+        Call<ValueNoData> call = api.register(BASE_KEY, username,email,phonenumber,password);
+        call.enqueue( new Callback<ValueNoData>() {
             @Override
-            public void onResponse(Call<ValueNoDataPasien> call, Response<ValueNoDataPasien> response) {
+            public void onResponse(Call<ValueNoData> call, Response<ValueNoData> response) {
                 if (response.code() == 200){
                     progressBar.setVisibility(View.GONE);
                     int success = response.body().getSuccess();
@@ -113,7 +114,7 @@ public class RegisterPasien extends AppCompatActivity {
             }
 
             @Override
-            public void onFailure(Call<ValueNoDataPasien> call, Throwable t) {
+            public void onFailure(Call<ValueNoData> call, Throwable t) {
                 progressBar.setVisibility( View.GONE );
                 System.out.println("Retrofit Error :"+ t.getMessage());
                 Toast.makeText( RegisterPasien.this,"Retrofit Error"+ t.getMessage(), Toast.LENGTH_SHORT ).show();

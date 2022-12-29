@@ -11,24 +11,32 @@ import com.if5a.cure_companion.R;
 
 public class PilihLogin extends AppCompatActivity {
 
-    private Button btnDoctor , btnPasien;
+    private Button btnDoctor, btnPasien;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate( savedInstanceState );
-        setContentView( R.layout.activity_pilih_login );
+        super.onCreate(savedInstanceState );
+        setContentView(R.layout.activity_pilih_login);
 
-        btnDoctor = findViewById( R.id.btn_doctor );
-        btnPasien = findViewById( R.id.btn_pasien );
+        btnDoctor = findViewById(R.id.btn_doctor);
+        btnPasien = findViewById(R.id.btn_pasien);
 
         btnPasien.setOnClickListener( new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(PilihLogin.this, LoginPasien.class);
-                startActivity( intent );
+                startActivity(intent);
                 finish();
             }
-        } );
+        });
+
+        btnDoctor.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent (PilihLogin.this, LoginDoctorActivity.class));
+                finish();
+            }
+        });
 
     }
 }
