@@ -97,7 +97,7 @@ public class RegisterDoctorActivity extends AppCompatActivity {
                     String message = response.body().getMessage();
                     if (success == 1){
                         Toast.makeText( RegisterDoctorActivity.this, message, Toast.LENGTH_SHORT ).show();
-                        Intent intent = new Intent(RegisterDoctorActivity.this, MainActivity.class);
+                        Intent intent = new Intent(RegisterDoctorActivity.this, MainDoctorActivity.class);
                         startActivity( intent );
                         finish();
                     }else {
