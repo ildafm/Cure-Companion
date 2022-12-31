@@ -11,14 +11,13 @@ import android.widget.Toast;
 import com.if5a.cure_companion.databinding.ActivityRegisterDoctorBinding;
 import com.if5a.cure_companion.models.ValueNoData;
 import com.if5a.cure_companion.services.APIService;
-import com.if5a.cure_companion.utilitis.UtilityDoctor;
+import com.if5a.cure_companion.services.Utilities;
 
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
 public class RegisterDoctorActivity extends AppCompatActivity {
-    private final static String BASE_KEY = "rekom";
     private ActivityRegisterDoctorBinding binding;
 
     @Override
@@ -86,8 +85,8 @@ public class RegisterDoctorActivity extends AppCompatActivity {
 
     private void register(String username, String email, String phonenumber, String password, String specialist_id, String department_id) {
         showProgressBar();
-        APIService api = UtilityDoctor.getmRetrofit().create( APIService.class);
-        Call<ValueNoData> call = api.registerDoctor(BASE_KEY, username, email, phonenumber, password, specialist_id, department_id);
+        APIService api = Utilities.getDoctorRetrofit().create( APIService.class);
+        Call<ValueNoData> call = api.registerDoctor(Utilities.BASE_KEY, username, email, phonenumber, password, specialist_id, department_id);
         call.enqueue( new Callback<ValueNoData>() {
             @Override
             public void onResponse(Call<ValueNoData> call, Response<ValueNoData> response) {

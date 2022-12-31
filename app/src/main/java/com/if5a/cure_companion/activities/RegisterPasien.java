@@ -14,7 +14,7 @@ import android.widget.Toast;
 import com.if5a.cure_companion.R;
 import com.if5a.cure_companion.models.ValueNoData;
 import com.if5a.cure_companion.services.APIService;
-import com.if5a.cure_companion.utilitis.UtilityPasien;
+import com.if5a.cure_companion.services.Utilities;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -90,7 +90,7 @@ public class RegisterPasien extends AppCompatActivity {
 
     private void register(String username, String email, String phonenumber, String password) {
         progressBar.setVisibility(View.VISIBLE);
-        APIService api = UtilityPasien.getmRetrofit().create( APIService.class);
+        APIService api = Utilities.getPatientRetrofit().create( APIService.class);
         Call<ValueNoData> call = api.register(BASE_KEY, username,email,phonenumber,password);
         call.enqueue( new Callback<ValueNoData>() {
             @Override

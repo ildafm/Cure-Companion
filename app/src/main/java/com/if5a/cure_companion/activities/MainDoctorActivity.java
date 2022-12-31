@@ -4,11 +4,16 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
+import com.if5a.cure_companion.databinding.ActivityMainDoctorBinding;
+
 public class MainDoctorActivity extends AppCompatActivity {
+    private ActivityMainDoctorBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main_doctor);
+
+        binding = ActivityMainDoctorBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
     }
 }
