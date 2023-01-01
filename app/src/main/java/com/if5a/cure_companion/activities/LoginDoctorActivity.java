@@ -84,7 +84,7 @@ public class LoginDoctorActivity extends AppCompatActivity {
                     if(success == 1){
                         Toast.makeText(LoginDoctorActivity.this, message, Toast.LENGTH_SHORT).show();
                         //
-
+                        Utilities.setValue(LoginDoctorActivity.this, "xEmail", email);
                         //
                         startActivity(new Intent(LoginDoctorActivity.this, MainDoctorActivity.class));
                         finish();

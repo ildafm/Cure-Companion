@@ -21,6 +21,8 @@ public class PilihLogin extends AppCompatActivity {
         btnDoctor = findViewById(R.id.btn_doctor);
         btnPasien = findViewById(R.id.btn_pasien);
 
+
+
         btnPasien.setOnClickListener( new View.OnClickListener() {
             @Override
             public void onClick(View v) {
