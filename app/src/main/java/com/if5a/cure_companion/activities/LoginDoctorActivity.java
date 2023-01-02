@@ -25,6 +25,13 @@ public class LoginDoctorActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        //jika sudah tersimpan tidak perlu login lagi
+        if(Utilities.checkValue(this, "xEmail")){
+            Intent intent = new Intent(this, MainDoctorActivity.class);
+            startActivity(intent);
+            finish();
+        }
+
         binding = ActivityLoginDoctorBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 

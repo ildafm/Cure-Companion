@@ -1,5 +1,7 @@
 package com.if5a.cure_companion.services;
 
+import com.if5a.cure_companion.models.Schedule;
+import com.if5a.cure_companion.models.ValueData;
 import com.if5a.cure_companion.models.ValueNoData;
 
 import retrofit2.Call;
@@ -37,4 +39,8 @@ public interface APIService {
                                @Field("password") String password,
                                @Field("specialist_id") String specialist_id,
                                @Field("department_id") String department_id);
+
+    @POST("getAllSchedule")
+    @FormUrlEncoded
+    Call<ValueData<Schedule>> getAllSchedule(@Field("key") String key);
 }
