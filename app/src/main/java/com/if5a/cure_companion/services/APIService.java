@@ -1,5 +1,6 @@
 package com.if5a.cure_companion.services;
 
+import com.if5a.cure_companion.models.Hospital;
 import com.if5a.cure_companion.models.Schedule;
 import com.if5a.cure_companion.models.ValueData;
 import com.if5a.cure_companion.models.ValueNoData;
@@ -43,4 +44,9 @@ public interface APIService {
     @POST("getAllDataSchedule")
     @FormUrlEncoded
     Call<ValueData<Schedule>> getAllDataSchedule(@Field("key") String key);
+
+
+    @POST("getAllDataHospital")
+    @FormUrlEncoded
+    Call<ValueData<Hospital>> getAllDataHospital(@Field("key") String key);
 }

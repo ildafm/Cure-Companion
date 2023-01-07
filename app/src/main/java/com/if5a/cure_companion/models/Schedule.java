@@ -1,11 +1,30 @@
 package com.if5a.cure_companion.models;
 
-import android.os.Parcel;
-import android.os.Parcelable;
-
 public class Schedule {
     private int id;
-    private String patient_id, date, doctor_id, status;
+    private String patient_id;
+    private String date;
+    private String doctor_id;
+    private String status;
+    private String created_date;
+
+    public String getCreated_date() {
+        return created_date;
+    }
+
+    public void setCreated_date(String created_date) {
+        this.created_date = created_date;
+    }
+
+    public String getModified_date() {
+        return modified_date;
+    }
+
+    public void setModified_date(String modified_date) {
+        this.modified_date = modified_date;
+    }
+
+    private String modified_date;
 
     public Schedule() {
     }

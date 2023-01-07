@@ -202,26 +202,36 @@
             android:textSize="18sp" />
 
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/et_hospital"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:layout_marginBottom="30dp"
-            android:hint="@string/spinner_hospital"
-            app:startIconDrawable="@drawable/ic_hospital_24"
-            app:startIconTint="@color/blue_main"
-            >
-            <AutoCompleteTextView
-                android:id="@+id/dropdown_hospital"
-                android:background="@drawable/background_edit_text"
+<!--        <com.google.android.material.textfield.TextInputLayout-->
+<!--            android:id="@+id/et_hospital"-->
+<!--            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:layout_marginLeft="10dp"-->
+<!--            android:layout_marginRight="10dp"-->
+<!--            android:layout_marginBottom="30dp"-->
+<!--            android:hint="@string/spinner_hospital"-->
+<!--            app:startIconDrawable="@drawable/ic_hospital_24"-->
+<!--            app:startIconTint="@color/blue_main"-->
+<!--            >-->
+<!--            <AutoCompleteTextView-->
+<!--                android:id="@+id/dropdown_hospital"-->
+<!--                android:background="@drawable/background_edit_text"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="50dp"-->
+<!--                android:inputType="none"-->
+<!--                />-->
+            <Spinner
+                android:id="@+id/spinner_hospital"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:inputType="none"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="10dp"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu"
+
                 />
-        </com.google.android.material.textfield.TextInputLayout>
+<!--        </com.google.android.material.textfield.TextInputLayout>-->
 
 
         <androidx.appcompat.widget.AppCompatButton

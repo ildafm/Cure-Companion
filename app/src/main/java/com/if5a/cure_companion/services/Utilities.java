@@ -46,6 +46,39 @@ public class Utilities {
         return retrofit;
     }
 
+    //retrofit for hospitals
+    public static Retrofit getHospitalRetrofit(){
+        if(retrofit == null){
+            retrofit = new Retrofit.Builder()
+                    .baseUrl(BASE_URL+"index.php/HospitalControll/")
+                    .addConverterFactory(GsonConverterFactory.create())
+                    .build();
+        }
+        return retrofit;
+    }
+
+    //retrofit for department
+    public static Retrofit getDepartmentRetrofit(){
+        if(retrofit == null){
+            retrofit = new Retrofit.Builder()
+                    .baseUrl(BASE_URL+"index.php/DepartmentControll/")
+                    .addConverterFactory(GsonConverterFactory.create())
+                    .build();
+        }
+        return retrofit;
+    }
+
+    //retrofit for consultation
+    public static Retrofit getConsultationRetrofit(){
+        if(retrofit == null){
+            retrofit = new Retrofit.Builder()
+                    .baseUrl(BASE_URL+"index.php/ConsultationControll/")
+                    .addConverterFactory(GsonConverterFactory.create())
+                    .build();
+        }
+        return retrofit;
+    }
+
     //clear user untuk logout
     public static void clearUser(Context context){
         SharedPreferences sp = context.getSharedPreferences(PREFERENCE_FILE_KEY, context.MODE_PRIVATE);
