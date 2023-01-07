@@ -40,7 +40,7 @@ public interface APIService {
                                @Field("specialist_id") String specialist_id,
                                @Field("department_id") String department_id);
 
-    @POST("getAllSchedule")
+    @POST("getAllDataSchedule")
     @FormUrlEncoded
-    Call<ValueData<Schedule>> getAllSchedule(@Field("key") String key);
+    Call<ValueData<Schedule>> getAllDataSchedule(@Field("key") String key);
 }

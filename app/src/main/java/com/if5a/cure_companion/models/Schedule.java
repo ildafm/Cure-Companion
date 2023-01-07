@@ -7,6 +7,9 @@ public class Schedule {
     private int id;
     private String patient_id, date, doctor_id, status;
 
+    public Schedule() {
+    }
+
     public int getId() {
         return id;
     }

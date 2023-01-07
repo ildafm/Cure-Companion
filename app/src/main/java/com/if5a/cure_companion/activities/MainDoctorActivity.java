@@ -73,8 +73,8 @@ public class MainDoctorActivity extends AppCompatActivity {
     //getAllSchedule
     private void getAllSchedule(){
         showProgressBar();
-        APIService api = Utilities.getDoctorRetrofit().create(APIService.class);
-        api.getAllSchedule(Utilities.BASE_KEY).enqueue(new Callback<ValueData<Schedule>>() {
+        APIService api = Utilities.getScheduleRetrofit().create(APIService.class);
+        api.getAllDataSchedule(Utilities.BASE_KEY).enqueue(new Callback<ValueData<Schedule>>() {
             @Override
             public void onResponse(Call<ValueData<Schedule>> call, Response<ValueData<Schedule>> response) {
                 if(response.code() == 200) {
@@ -83,6 +83,7 @@ public class MainDoctorActivity extends AppCompatActivity {
                     if (success == 1) {
                         data = response.body().getData();
                         doctorScheduleAdapter.setData(data);
+                        Toast.makeText(MainDoctorActivity.this, message, Toast.LENGTH_SHORT).show();
                     } else {
                         Toast.makeText(MainDoctorActivity.this, message, Toast.LENGTH_SHORT).show();
                     }

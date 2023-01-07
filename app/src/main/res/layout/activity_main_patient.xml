@@ -30,7 +30,7 @@
         android:textSize="18sp" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_schedule"
+        android:id="@+id/rv_pat"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:listitem="@layout/schedule_doctor"

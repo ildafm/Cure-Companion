@@ -40,9 +40,9 @@ public class RegisterPatientActivity extends AppCompatActivity {
         btnLogin = findViewById(R.id.btn_login_patient);
         progressBar = findViewById(R.id.progress_bar);
 
-        progressBar.setVisibility( View.GONE);
+        progressBar.setVisibility(View.GONE);
 
-        btnRegister.setOnClickListener( new View.OnClickListener() {
+        btnRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String username = etUsername.getText().toString();
@@ -73,7 +73,7 @@ public class RegisterPatientActivity extends AppCompatActivity {
                 }
 
                 if (bolehRegister) {
-                    register(username, email,phonenumber, password);
+                    register(username, email, phonenumber, password);
                 }
             }
         } );

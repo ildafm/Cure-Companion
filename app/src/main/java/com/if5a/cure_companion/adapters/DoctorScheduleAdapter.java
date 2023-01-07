@@ -4,11 +4,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.if5a.cure_companion.R;
+import com.if5a.cure_companion.activities.MainDoctorActivity;
 import com.if5a.cure_companion.models.Schedule;
 
 import java.util.ArrayList;
@@ -32,7 +34,7 @@ public class DoctorScheduleAdapter extends RecyclerView.Adapter<DoctorScheduleAd
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         int sc = holder.getAdapterPosition();
         Schedule schedule = data.get(sc);
-        holder.tvPatientName.setText(schedule.getPatient_id() + "(patient_id) sementara gini dulu, yang ini harus di perbaiki di API nya");
+        holder.tvPatientName.setText(schedule.getPatient_id() + "(patient_id)");
         holder.tvDate.setText(schedule.getDate());
     }
 
@@ -43,6 +45,7 @@ public class DoctorScheduleAdapter extends RecyclerView.Adapter<DoctorScheduleAd
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         private TextView tvPatientName, tvDate;
+
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 

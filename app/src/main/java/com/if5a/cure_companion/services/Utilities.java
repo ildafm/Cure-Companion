@@ -35,6 +35,17 @@ public class Utilities {
         return retrofit;
     }
 
+    //retrofit for schedule
+    public static Retrofit getScheduleRetrofit(){
+        if(retrofit == null){
+            retrofit = new Retrofit.Builder()
+                    .baseUrl(BASE_URL+"index.php/ScheduleControll/")
+                    .addConverterFactory(GsonConverterFactory.create())
+                    .build();
+        }
+        return retrofit;
+    }
+
     //clear user untuk logout
     public static void clearUser(Context context){
         SharedPreferences sp = context.getSharedPreferences(PREFERENCE_FILE_KEY, context.MODE_PRIVATE);
