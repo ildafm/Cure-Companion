@@ -9,5 +9,7 @@
 
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
-    <string name="spinner_specialist">Pilih Specialist</string>
+    <string name="spinner_department">Select Your Department</string>
+    <string name="spinner_hospital">Select Your Hospital</string>
+
 </resources>

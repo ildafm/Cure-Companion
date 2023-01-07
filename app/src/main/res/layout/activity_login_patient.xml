@@ -29,11 +29,11 @@
     <TextView
         android:layout_width="200dp"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
         android:layout_marginBottom="30dp"
         android:fontFamily="@font/poppins_medium"
         android:gravity="center"
-        android:layout_gravity="center"
-        android:text="Nice to see you doctor, Please sign in to your account"
+        android:text="Are you okay? Please sign in to your account"
         android:textSize="12sp" />
 
     <TextView
@@ -46,23 +46,23 @@
         android:text="Email"
         android:textSize="18sp" />
 
-        <EditText
-            android:drawableLeft="@drawable/ic_email_24"
-            android:id="@+id/et_email"
-            android:padding="10dp"
-            android:drawablePadding="10dp"
-            android:layout_marginBottom="20dp"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:autofillHints="emailAddress"
-            android:background="@drawable/background_edit_text"
-            android:fontFamily="@font/poppins_medium"
-            android:hint="Insert Your Email"
-            android:inputType="text"
-            android:textSize="15sp"/>
+    <EditText
+        android:drawableLeft="@drawable/ic_email_24"
+        android:id="@+id/et_email"
+        android:padding="10dp"
+        android:drawablePadding="10dp"
+        android:layout_marginBottom="20dp"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:autofillHints="emailAddress"
+        android:background="@drawable/background_edit_text"
+        android:fontFamily="@font/poppins_medium"
+        android:hint="Insert Your Email"
+        android:inputType="text"
+        android:textSize="15sp"/>
 
     <TextView
         android:layout_width="match_parent"
@@ -94,7 +94,7 @@
         android:textSize="15sp"/>
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btn_login_doctor"
+        android:id="@+id/btn_login_patient"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -118,7 +118,7 @@
         android:textSize="12sp" />
 
     <Button
-        android:id="@+id/btn_register_doctor"
+        android:id="@+id/btn_register_patient"
         style="@style/Widget.MaterialComponents.Button.TextButton"
         android:layout_width="match_parent"
         android:layout_height="37dp"
@@ -135,7 +135,7 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_gravity="center"
-        android:visibility="gone"
+        android:visibility=""
         />
 
 </LinearLayout>

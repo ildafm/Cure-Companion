@@ -19,14 +19,14 @@ public class PilihLogin extends AppCompatActivity {
         setContentView(R.layout.activity_pilih_login);
 
         btnDoctor = findViewById(R.id.btn_doctor);
-        btnPasien = findViewById(R.id.btn_pasien);
+        btnPasien = findViewById(R.id.btn_patient);
 
 
 
         btnPasien.setOnClickListener( new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(PilihLogin.this, LoginPasien.class);
+                Intent intent = new Intent(PilihLogin.this, LoginPatientActivity.class);
                 startActivity(intent);
                 finish();
             }

@@ -6,8 +6,13 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
+import android.widget.Adapter;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.Toast;
 
+import com.if5a.cure_companion.R;
 import com.if5a.cure_companion.databinding.ActivityRegisterDoctorBinding;
 import com.if5a.cure_companion.models.ValueNoData;
 import com.if5a.cure_companion.services.APIService;
@@ -20,16 +25,29 @@ import retrofit2.Response;
 public class RegisterDoctorActivity extends AppCompatActivity {
     private ActivityRegisterDoctorBinding binding;
 
+    String[] itemDepartment= {"Internal Medicine", "Pediatrician",  "Obstetricians/gynecologist (OBGYNs)",  "Cardiologist", "Oncologist", "Gastroenterologist", "Pulmonologist",  "Infectious disease", "Nephrologist", "Endocrinologist", "Ophthalmologist", "Otolaryngologist", "Dermatologist", "Psychiatrist", "Neurologist", "Radiologist", "Anesthesiologist", "Surgeon", "Physician executive"};
+    String[] itemHospital= {"RSUP Dr. Mohammad Hoesin", "RSUD Palembang", "RSUD Sumatera Selatan", "RS Islam Siti Khadijah", "RS Siloam Sriwijaya", "RS Paru Palembang", "RS RK Charitas", "RS Sriwijaya Palembang", "RS Ar-Rasyid", "RS Bhayangkara Palembang", "RS Bunda Palembang", "RS Dr. AK. Gani", "RS Hermina Palembang", "RS Muhammadiyah Palembang", "RS Musi Medika Cendikia", "RS Sriwijaya Palembang", "RS Pelabuhan Palembang", "RS Pertamina Plaju", "RS Pusri Palembang" };
+
+    AutoCompleteTextView department,hospital;
+
+    ArrayAdapter<String> adapterDepartment,adapterHospital;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         binding = ActivityRegisterDoctorBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+        department = findViewById(R.id.dropdown_department);
+        hospital = findViewById(R.id.dropdown_hospital);
+
+        adapterDepartment = new ArrayAdapter<String>(this, R.layout.list_dropdown, itemDepartment);
+        adapterHospital = new ArrayAdapter<String>(this, R.layout.list_dropdown, itemHospital);
+
+        department.setAdapter(adapterDepartment);
+        hospital.setAdapter(adapterHospital);
+
         callAllFunction();
-
-
     }
     private void callAllFunction(){
         clickButtonLogin();
@@ -42,10 +60,10 @@ public class RegisterDoctorActivity extends AppCompatActivity {
             public void onClick(View view) {
                 String username = binding.etUsername.getText().toString();
                 String email = binding.etEmail.getText().toString();
-                String phoneNumber = binding.etPhoneNumber.getText().toString();
+                String phoneNumber = binding.etPhonenumber.getText().toString();
                 String password = binding.etPassword.getText().toString();
-                String specialist_id = binding.etSpecialistId.getText().toString();
-                String department_id = binding.etDepartmentId.getText().toString();
+                String department_id = binding.etDepartment.getContext().toString();
+                String hospital_id = binding.etHospital.getContext().toString();
 
                 boolean bolehRegister = true;
                 if(TextUtils.isEmpty( username )){
@@ -58,19 +76,19 @@ public class RegisterDoctorActivity extends AppCompatActivity {
                 }
                 if(TextUtils.isEmpty( phoneNumber )){
                     bolehRegister = false;
-                    binding.etPhoneNumber.setError( "Phone Number tidak boleh kosong!" );
+                    binding.etPhonenumber.setError( "Phone Number tidak boleh kosong!" );
                 }
                 if(TextUtils.isEmpty(password)){
                     bolehRegister = false;
                     binding.etPassword.setError( "Password tidak boleh kosong!" );
                 }
-                if(TextUtils.isEmpty(specialist_id)){
-                    bolehRegister = false;
-                    binding.etSpecialistId.setError( "Pilih Specialist (isi dengan 1)" );
-                }
                 if(TextUtils.isEmpty(department_id)){
                     bolehRegister = false;
-                    binding.etDepartmentId.setError( "Pilih Department (isi dengan 1)" );
+                    binding.etDepartment.setError( "Pilih salah satu Department" );
+                }
+                if(TextUtils.isEmpty(hospital_id)){
+                    bolehRegister = false;
+                    binding.etHospital.setError( "Pilih salah satu Hospital" );
                 }
                 if(password.length() < 6){
                     bolehRegister = false;
@@ -78,7 +96,7 @@ public class RegisterDoctorActivity extends AppCompatActivity {
                 }
 
                 if (bolehRegister) {
-                    register(username, email, phoneNumber, password, specialist_id, department_id);
+                    register(username, email, phoneNumber, password, department_id, hospital_id);
                 }
             }
         });

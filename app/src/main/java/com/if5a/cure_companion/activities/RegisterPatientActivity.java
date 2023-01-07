@@ -20,7 +20,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class RegisterPasien extends AppCompatActivity {
+public class RegisterPatientActivity extends AppCompatActivity {
     private final static String BASE_KEY = "rekom";
 
     private EditText etUsername, etEmail, etPhoneNumber, etPassword;
@@ -30,15 +30,15 @@ public class RegisterPasien extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate( savedInstanceState );
-        setContentView( R.layout.activity_register_pasien );
+        setContentView( R.layout.activity_register_patient);
 
         etUsername = findViewById( R.id.et_username );
         etEmail = findViewById( R.id.et_email );
         etPhoneNumber = findViewById( R.id.et_phonenumber );
         etPassword = findViewById( R.id.et_password );
-        btnRegister = findViewById( R.id.btn_registerpasien );
-        btnLogin = findViewById(R.id.btn_loginpasien);
-        progressBar = findViewById(R.id.progressBar);
+        btnRegister = findViewById( R.id.btn_register_patient );
+        btnLogin = findViewById(R.id.btn_login_patient);
+        progressBar = findViewById(R.id.progress_bar);
 
         progressBar.setVisibility( View.GONE);
 
@@ -81,7 +81,7 @@ public class RegisterPasien extends AppCompatActivity {
         btnLogin.setOnClickListener( new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(RegisterPasien.this, LoginActivity.class);
+                Intent intent = new Intent(RegisterPatientActivity.this, LoginActivity.class);
                 startActivity( intent );
                 finish();
             }
@@ -100,16 +100,16 @@ public class RegisterPasien extends AppCompatActivity {
                     int success = response.body().getSuccess();
                     String message = response.body().getMessage();
                     if (success == 1){
-                        Toast.makeText( RegisterPasien.this, message, Toast.LENGTH_SHORT ).show();
-                        Intent intent = new Intent(RegisterPasien.this, MainActivity.class);
+                        Toast.makeText( RegisterPatientActivity.this, message, Toast.LENGTH_SHORT ).show();
+                        Intent intent = new Intent(RegisterPatientActivity.this, MainPatientActivity.class);
                         startActivity( intent );
                         finish();
                     }else {
-                        Toast.makeText( RegisterPasien.this, message, Toast.LENGTH_SHORT ).show();
+                        Toast.makeText( RegisterPatientActivity.this, message, Toast.LENGTH_SHORT ).show();
                     }
                 } else {
                     progressBar.setVisibility( View.GONE );
-                    Toast.makeText( RegisterPasien.this,"Response "+ response.code(), Toast.LENGTH_SHORT ).show();
+                    Toast.makeText( RegisterPatientActivity.this,"Response "+ response.code(), Toast.LENGTH_SHORT ).show();
                 }
             }
 
@@ -117,7 +117,7 @@ public class RegisterPasien extends AppCompatActivity {
             public void onFailure(Call<ValueNoData> call, Throwable t) {
                 progressBar.setVisibility( View.GONE );
                 System.out.println("Retrofit Error :"+ t.getMessage());
-                Toast.makeText( RegisterPasien.this,"Retrofit Error"+ t.getMessage(), Toast.LENGTH_SHORT ).show();
+                Toast.makeText( RegisterPatientActivity.this,"Retrofit Error"+ t.getMessage(), Toast.LENGTH_SHORT ).show();
             }
         } );
     }

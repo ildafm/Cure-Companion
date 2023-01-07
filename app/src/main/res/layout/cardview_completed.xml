@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:layout_margin="20dp"
+    android:elevation="20dp"
+    app:cardCornerRadius="15dp"
+    >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:padding="20dp">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/iv_profile_patient"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/ic_launcher"
+            app:shapeAppearanceOverlay="@style/imageRounded" />
+
+        <TextView
+            android:id="@+id/tv_username"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_toRightOf="@+id/iv_profile_patient"
+            android:text="Dr. + username"
+            android:fontFamily="@font/poppins_semibold"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_department"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_username"
+            android:fontFamily="@font/poppins_light"
+            android:layout_marginLeft="20dp"
+            android:layout_toRightOf="@+id/iv_profile_patient"
+            android:text="Doctor Department"
+            android:textColor="@color/abu2"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/tv_type_visit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_username"
+            android:layout_toRightOf="@+id/tv_department"
+            android:ellipsize="end"
+            android:justificationMode="inter_word"
+            android:fontFamily="@font/poppins_light"
+            android:maxLines="1"
+            android:text="Type Visit"
+            android:textColor="@color/abu2"
+            android:drawableStart="@drawable/ic__arrow_right_15"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/tv_date_schedule"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_department"
+            android:layout_marginTop="5dp"
+            android:text="Day, Date"
+            android:layout_marginLeft="20dp"
+            android:fontFamily="@font/poppins_medium"
+            android:drawableStart="@drawable/ic_baseline_date_15"
+            android:layout_toRightOf="@+id/iv_profile_patient"
+            android:elegantTextHeight="true"
+            android:drawablePadding="5dp"
+            android:textColor="@color/abu2"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/tv_time_schedule"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_type_visit"
+            android:layout_toRightOf="@+id/tv_date_schedule"
+            android:text="Time"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:fontFamily="@font/poppins_medium"
+            android:textColor="@color/abu2"
+            android:drawableStart="@drawable/ic_time_filled_15"
+            android:elegantTextHeight="true"
+            android:drawablePadding="5dp"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/tv_upcoming"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_date_schedule"
+            android:text=" Completed "
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:padding="5dp"
+            android:fontFamily="@font/poppins_semibold"
+            android:textColor="@color/green"
+            android:layout_toRightOf="@+id/iv_profile_patient"
+            android:background="@drawable/background_completed"
+            android:textSize="10sp" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_join_session"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_below="@id/tv_upcoming"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/bacckground_view_detail"
+            android:fontFamily="@font/poppins_semibold"
+            android:text="View Detail"
+            android:textAllCaps="false"
+            android:textColor="@color/orange_main"
+            android:textSize="15sp" />
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

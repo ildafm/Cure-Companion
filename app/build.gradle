@@ -39,8 +39,17 @@ dependencies {
     implementation 'androidx.navigation:navigation-fragment:2.5.3'
     implementation 'androidx.navigation:navigation-ui:2.5.3'
     testImplementation 'junit:junit:4.13.2'
+    implementation 'androidx.cardview:cardview:1.0.0'
     androidTestImplementation 'androidx.test.ext:junit:1.1.4'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.0'
+
+    //glide
+    implementation 'com.github.bumptech.glide:glide:4.14.2'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.14.2'
+
+    //lottie
+    def lottieVersion = "5.2.0"
+    implementation "com.airbnb.android:lottie:$lottieVersion"
 
     //menambahkan retrofit untuk rest api
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'

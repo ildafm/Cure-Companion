@@ -9,22 +9,22 @@ import android.widget.Button;
 
 import com.if5a.cure_companion.R;
 
-public class LoginPasien extends AppCompatActivity {
+public class LoginPatientActivity extends AppCompatActivity {
 
     private Button btnLogin, btnRegister;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate( savedInstanceState );
-        setContentView( R.layout.activity_login_pasien );
+        setContentView( R.layout.activity_login_patient);
 
-        btnRegister = findViewById( R.id.btn_registerpasien_Login );
-        btnLogin = findViewById(R.id.btn_loginpasien_Login);
+        btnRegister = findViewById( R.id.btn_register_patient );
+        btnLogin = findViewById(R.id.btn_login_patient);
 
         btnRegister.setOnClickListener( new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(LoginPasien.this, RegisterPasien.class);
+                Intent intent = new Intent(LoginPatientActivity.this, RegisterPatientActivity.class);
                 startActivity( intent );
                 finish();
             }

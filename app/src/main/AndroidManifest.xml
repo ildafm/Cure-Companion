@@ -36,14 +36,14 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".activities.RegisterPasien"
+            android:name=".activities.RegisterPatientActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".activities.LoginPasien"
+            android:name=".activities.LoginPatientActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
@@ -85,6 +85,10 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>

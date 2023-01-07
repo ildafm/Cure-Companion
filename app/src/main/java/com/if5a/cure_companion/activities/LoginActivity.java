@@ -3,17 +3,22 @@ package com.if5a.cure_companion.activities;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.LayoutInflater;
 
-import com.if5a.cure_companion.databinding.ActivityLoginBinding;
+import com.if5a.cure_companion.databinding.ActivityPilihLoginBinding;
 
 public class LoginActivity extends AppCompatActivity {
-    private ActivityLoginBinding binding;
+    private ActivityPilihLoginBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        binding = ActivityLoginBinding.inflate(getLayoutInflater());
+        binding = LoginActivity.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+    }
+
+    private static ActivityPilihLoginBinding inflate(LayoutInflater layoutInflater) {
+        return null;
     }
 }

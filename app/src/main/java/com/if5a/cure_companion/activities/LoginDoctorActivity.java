@@ -36,7 +36,7 @@ public class LoginDoctorActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
 
         //klik button login
-        binding.btnDoctorLogin.setOnClickListener(new View.OnClickListener() {
+        binding.btnLoginDoctor.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 login();
@@ -44,7 +44,7 @@ public class LoginDoctorActivity extends AppCompatActivity {
         });
 
         //klik button register
-        binding.btnDoctorRegister.setOnClickListener(new View.OnClickListener() {
+        binding.btnRegisterDoctor.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 register();
@@ -54,19 +54,19 @@ public class LoginDoctorActivity extends AppCompatActivity {
 
     private void login(){
 //        Toast.makeText(LoginDoctorActivity.this, "Loginnya belum dibuat bang", Toast.LENGTH_SHORT).show();
-        String email = binding.etEmailLogin.getText().toString();
-        String password = binding.etPasswordLogin.getText().toString();
+        String email = binding.etEmail.getText().toString();
+        String password = binding.etPassword.getText().toString();
 
         boolean bolehLogin = true;
 
         if (TextUtils.isEmpty(email)){
             bolehLogin = false;
-            binding.etEmailLogin.setError("Silahkan isi email terlebih dahulu");
+            binding.etEmail.setError("Silahkan isi email terlebih dahulu");
         }
 
         if (TextUtils.isEmpty(password)){
             bolehLogin = false;
-            binding.etPasswordLogin.setError("Silahkan isi password terlebih dahulu");
+            binding.etPassword.setError("Silahkan isi password terlebih dahulu");
         }
 
         if (bolehLogin){

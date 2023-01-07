@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:layout_margin="20dp"
+    android:elevation="20dp"
+    app:cardCornerRadius="15dp"
+    >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:padding="20dp">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/iv_profile_patient"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/ic_launcher"
+            app:shapeAppearanceOverlay="@style/imageRounded" />
+
+        <TextView
+            android:id="@+id/tv_username"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_toRightOf="@+id/iv_profile_patient"
+            android:text="Dr. + username"
+            android:fontFamily="@font/poppins_semibold"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_hospital"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_username"
+            android:fontFamily="@font/poppins_light"
+            android:layout_marginLeft="20dp"
+            android:layout_toRightOf="@+id/iv_profile_patient"
+            android:text="Hospital Name"
+            android:textColor="@color/black"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/domicile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_username"
+            android:layout_toRightOf="@+id/tv_hospital"
+            android:ellipsize="end"
+            android:justificationMode="inter_word"
+            android:fontFamily="@font/poppins_light"
+            android:maxLines="1"
+            android:text="Domicile"
+            android:textColor="@color/black"
+            android:drawableStart="@drawable/ic__arrow_right_15"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/tv_time_schedule"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_hospital"
+            android:layout_marginRight="20dp"
+            android:text="Time"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="5dp"
+            android:fontFamily="@font/poppins_medium"
+            android:textColor="@color/black"
+            android:layout_toRightOf="@+id/iv_profile_patient"
+            android:drawableStart="@drawable/ic_time_24"
+            android:elegantTextHeight="true"
+            android:drawablePadding="5dp"
+            android:textSize="12sp" />
+
+        <ImageView
+            android:id="@+id/star"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/domicile"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@+id/tv_time_schedule"
+
+            android:src="@drawable/stars" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_join_session"
+            android:layout_width="200dp"
+            android:layout_height="35dp"
+            android:layout_below="@id/tv_time_schedule"
+            android:layout_marginTop="15dp"
+            android:fontFamily="@font/poppins_semibold"
+            android:layout_toRightOf="@+id/tv_time_schedule"
+            android:text="Check Doctor Info"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:background="@drawable/button_blue_bg"
+            android:textSize="15sp" />
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>
